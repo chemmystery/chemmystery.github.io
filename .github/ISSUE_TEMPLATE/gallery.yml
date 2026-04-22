@@ -1,0 +1,16 @@
+name: Add Gallery Image
+description: Upload a photo to the gallery
+title: "[Event/Photo Name]"
+labels: ["gallery"]
+body:
+  - type: markdown
+    attributes:
+      value: "### Add to Gallery\nThe title is just for your tracking; only the image will be shown on the website."
+  - type: textarea
+    id: image
+    attributes:
+      label: Image Upload
+      description: "Drag and drop the image here."
+    validations:
+      required: true
+      
