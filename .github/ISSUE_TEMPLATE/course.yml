@@ -1,0 +1,23 @@
+name: Add Course
+description: Add a new program or batch
+title: "[Course Name]"
+labels: ["course"]
+body:
+  - type: markdown
+    attributes:
+      value: "### Add a New Course/Batch\nThe Issue Title above will be used as the Course Name."
+  - type: textarea
+    id: image
+    attributes:
+      label: Cover Image
+      description: "Drag and drop a banner or relevant image here."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Details about the batch, timings, and syllabus."
+    validations:
+      required: true
+      
