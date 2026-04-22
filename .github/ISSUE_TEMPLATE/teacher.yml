@@ -1,0 +1,23 @@
+name: Add Teacher
+description: Add a new mentor to the website
+title: "[Teacher Name]"
+labels: ["teacher"]
+body:
+  - type: markdown
+    attributes:
+      value: "### Add a New Teacher\nThe Issue Title above will be used as the Teacher's Name."
+  - type: textarea
+    id: image
+    attributes:
+      label: Photo
+      description: "Drag and drop the teacher's photo here."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Write a short bio or qualifications."
+    validations:
+      required: true
+      
