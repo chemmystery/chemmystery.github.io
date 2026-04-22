@@ -1,0 +1,22 @@
+name: Add Branch
+description: Add a new coaching center location
+title: "[Branch Location Name]"
+labels: ["branch"]
+body:
+  - type: markdown
+    attributes:
+      value: "### Add a New Branch\nThe Issue Title above will be used as the Branch Name (e.g., 'City Center Branch')."
+  - type: textarea
+    id: image
+    attributes:
+      label: Branch Image
+      description: "Drag and drop a photo of the building or classroom."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Details
+      description: "Full address, contact numbers, and landmarks."
+    validations:
+      required: true
