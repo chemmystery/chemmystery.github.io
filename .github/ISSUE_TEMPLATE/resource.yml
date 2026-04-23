@@ -1,14 +1,14 @@
-name: 📄 Add Resource
-description: Add a new study resource to the Chem-Mystery student portal
-title: "📄 Note: "
+name: Add New Resource
+description: Upload a new course note, PDF, or image gallery to Chem-Mystery.
+title: "[Resource] "
 labels: ["resource"]
 body:
   - type: input
     id: course
     attributes:
       label: Course
-      description: The course this resource belongs to
-      placeholder: e.g. Organic Chemistry II
+      description: Enter the course name (e.g., Organic Chemistry, Physical Chemistry).
+      placeholder: e.g., Inorganic Chemistry II
     validations:
       required: true
 
@@ -16,20 +16,8 @@ body:
     id: date
     attributes:
       label: Date
-      description: Date of the lecture or material (YYYY-MM-DD)
-      placeholder: e.g. 2025-09-15
-    validations:
-      required: true
-
-  - type: textarea
-    id: pdf
-    attributes:
-      label: PDF File
-      description: >
-        Attach your PDF here — drag & drop the file into this box or click the
-        paperclip icon below the text area. GitHub will upload it and insert a
-        link automatically. Do not type anything; just attach the file.
-      placeholder: "Attach PDF by dragging it here or clicking the paperclip ↓"
+      description: The date of the lecture or note.
+      placeholder: e.g., Oct 24, 2023
     validations:
       required: false
 
@@ -37,7 +25,14 @@ body:
     id: notes
     attributes:
       label: Notes
-      description: A short description of what this resource covers
-      placeholder: e.g. Covers SN1/SN2 mechanisms and stereochemistry
+      description: Add any text descriptions, summaries, or key takeaways here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Attachments
+      description: Drag and drop your PDFs or images here to upload them securely to GitHub.
     validations:
       required: false
