@@ -121,17 +121,18 @@
     .meta-item { display:flex; align-items:center; gap:4px; }
     .meta-item svg { width:12px; height:12px; opacity:0.65; }
     .card-body { font-size:13.5px; line-height:1.68; color:var(--text-muted); font-weight:300; }
-    .card-footer { margin-top:auto; display:flex; gap:8px; flex-wrap:wrap; }
-
-    .btn-pdf {
+    
+    .card-footer { margin-top:auto; display:flex; gap:8px; flex-wrap:wrap; align-items: center; }
+    .btn-pdf, .btn-img {
       display:inline-flex; align-items:center; gap:6px;
       padding:7px 16px; border-radius:9px; font-size:12px; font-weight:600;
-      text-decoration:none; color:#fff;
+      text-decoration:none; color:#fff; border:none; cursor:pointer; font-family:var(--font-sans);
       box-shadow:0 3px 12px rgba(0,0,0,0.14);
       transition:transform 0.16s, box-shadow 0.16s;
     }
-    .btn-pdf:hover { transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,0.20); }
-    .btn-pdf svg { width:13px; height:13px; }
+    .btn-pdf:hover, .btn-img:hover { transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,0.20); }
+    .btn-pdf svg, .btn-img svg { width:13px; height:13px; }
+    .empty-meta { font-size:11px;font-family:var(--font-mono);color:var(--text-muted);opacity:.6; margin: 4px 0; }
 
     /* STATES */
     #empty-state { grid-column:1/-1; display:flex; flex-direction:column; align-items:center; gap:16px; padding:90px 20px; text-align:center; }
@@ -197,9 +198,7 @@
       text-align: center; line-height: 1.6; margin-bottom: 30px;
     }
 
-    .gate-input-wrap {
-      position: relative; width: 100%; margin-bottom: 14px;
-    }
+    .gate-input-wrap { position: relative; width: 100%; margin-bottom: 14px; }
     #gate-input {
       width: 100%; padding: 13px 46px 13px 18px;
       border-radius: 13px; border: 1.5px solid rgba(94,124,226,0.22);
@@ -208,22 +207,10 @@
       color: var(--text); outline: none;
       transition: border-color 0.18s, box-shadow 0.18s;
     }
-    #gate-input:focus {
-      border-color: var(--accent1);
-      box-shadow: 0 0 0 3px rgba(94,124,226,0.12);
-    }
-    #gate-input.error {
-      border-color: #e74c3c;
-      box-shadow: 0 0 0 3px rgba(231,76,60,0.10);
-      animation: shake 0.38s ease;
-    }
-    @keyframes shake {
-      0%,100%{transform:translateX(0)}
-      20%{transform:translateX(-7px)}
-      40%{transform:translateX(7px)}
-      60%{transform:translateX(-5px)}
-      80%{transform:translateX(5px)}
-    }
+    #gate-input:focus { border-color: var(--accent1); box-shadow: 0 0 0 3px rgba(94,124,226,0.12); }
+    #gate-input.error { border-color: #e74c3c; box-shadow: 0 0 0 3px rgba(231,76,60,0.10); animation: shake 0.38s ease; }
+    @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-7px)} 40%{transform:translateX(7px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} }
+    
     .toggle-pw {
       position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
       background: none; border: none; cursor: pointer; padding: 2px;
@@ -250,11 +237,45 @@
     #gate-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(94,124,226,0.40); }
     #gate-btn:active { transform: translateY(0); }
 
-    /* hide main content until unlocked */
-    #main-content { display: none; }
-
+    /* MODAL GALLERY */
+    #gallery-modal {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(10,10,10,0.88); backdrop-filter: blur(12px);
+      align-items: center; justify-content: center; flex-direction: column;
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    #gallery-modal.active { display: flex; opacity: 1; }
+    .gallery-img-container { position: relative; max-width: 90vw; max-height: 80vh; display: flex; align-items: center; justify-content: center; }
+    #gallery-img { max-width: 100%; max-height: 80vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); object-fit: contain; }
+    
+    .gallery-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.15); border: none; color: white;
+      width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s; z-index: 2;
+    }
+    .gallery-btn:hover { background: rgba(255,255,255,0.3); transform: translateY(-50%) scale(1.05); }
+    .gallery-btn svg { width: 24px; height: 24px; }
+    #gallery-prev { left: -70px; }
+    #gallery-next { right: -70px; }
+    
+    #gallery-close {
+      position: absolute; top: 24px; right: 24px;
+      background: rgba(255,255,255,0.15); border: none; color: white;
+      width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+    }
+    #gallery-close:hover { background: rgba(255,255,255,0.3); }
+    .gallery-count { margin-top: 20px; color: white; font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.1em; }
+    
+    @media(max-width: 800px) {
+      #gallery-prev { left: 10px; } #gallery-next { right: 10px; }
+    }
     @media(max-width:600px) { h1{font-size:2.1rem;} .filter-row{flex-direction:column;align-items:flex-start;} }
     @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+    
+    #main-content { display: none; }
   </style>
 </head>
 <body>
@@ -267,7 +288,22 @@
   <div class="molecules" id="mol-container"></div>
 </div>
 
-<!-- PASSWORD GATE -->
+<div id="gallery-modal">
+  <button id="gallery-close" aria-label="Close Gallery">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="gallery-img-container">
+    <button class="gallery-btn" id="gallery-prev" aria-label="Previous Image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <img id="gallery-img" src="" alt="Gallery Image" />
+    <button class="gallery-btn" id="gallery-next" aria-label="Next Image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+  <div class="gallery-count" id="gallery-count"></div>
+</div>
+
 <div id="gate">
   <div id="gate-card">
     <div class="gate-icon">
@@ -289,11 +325,8 @@
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div id="main-content">
-
 <div class="wrapper">
-
   <header>
     <div class="badge">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -330,7 +363,8 @@
   </div>
 
   <footer>Chem-Mystery &nbsp;&middot;&nbsp; Student Resources</footer>
-</div><!-- end #main-content -->
+</div>
+</div>
 
 <script>
   /* ── PASSWORD GATE ── */
@@ -351,10 +385,10 @@
       setTimeout(() => { gate.style.display = 'none'; }, 420);
       main.style.display = 'block';
       main.style.animation = 'fadeUp 0.5s ease both';
-      load(); // fetch resources only after unlock
+      load(); 
     } else {
       gateInput.classList.remove('error');
-      void gateInput.offsetWidth; // reflow to retrigger animation
+      void gateInput.offsetWidth;
       gateInput.classList.add('error');
       gateErr.classList.add('show');
       gateInput.value = '';
@@ -366,7 +400,6 @@
   gateBtn.addEventListener('click', unlock);
   gateInput.addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
 
-  // show/hide password toggle
   togglePw.addEventListener('click', () => {
     const show = gateInput.type === 'password';
     gateInput.type = show ? 'text' : 'password';
@@ -375,17 +408,15 @@
       : `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
   });
 
-  // clear error on typing
   gateInput.addEventListener('input', () => gateErr.classList.remove('show'));
 </script>
 
 <script>
-  /* ── Hardcoded repo ── */
+  /* ── API Configuration ── */
   const OWNER = 'chemmystery';
   const REPO  = 'chemmystery.github.io';
   const LABEL = 'resource';
 
-  /* ── Course → gradient colour ── */
   const GRADIENTS = [
     'linear-gradient(135deg,#5e7ce2,#9b59b6)',
     'linear-gradient(135deg,#9b59b6,#e85d9a)',
@@ -401,26 +432,44 @@
     return colorMap[c];
   }
 
-  /* ── Parse issue body ──
-     GitHub form templates output:
-       ### Course
-       Organic Chemistry II
-  ── */
+  /* ── Dynamic Markdown Parser ── */
   function parseBody(body) {
     const get = k => {
       const m = (body||'').match(new RegExp('###\\s*' + k + '\\s*\\n+([\\s\\S]+?)(?=\\n###|$)', 'i'));
       if (m) { const v = m[1].trim(); if (v && v !== '_No response_') return v; }
       return '';
     };
-    // Extract GitHub-hosted attachment URL from the PDF section
-    // GitHub embeds uploads as markdown: [filename.pdf](https://github.com/user-attachments/assets/...)
-    // or legacy: https://github.com/.../files/.../filename.pdf
-    const getPdf = () => {
-      const section = get('PDF File') || get('PDF') || (body||'');
-      const m = section.match(/https:\/\/github\.com\/[^\s)]+\.pdf|https:\/\/github\.com\/user-attachments\/assets\/[^\s)]+/i);
-      return m ? m[0] : '';
+
+    const images = [];
+    const pdfs = [];
+
+    // 1. Extract markdown image arrays ![alt](url)
+    const imgRegex = /!\[.*?\]\((https:\/\/github\.com\/[^\s)]+)\)/gi;
+    let match;
+    while ((match = imgRegex.exec(body)) !== null) { images.push(match[1]); }
+
+    // 2. Extract HTML image arrays <img src="url">
+    const htmlImgRegex = /<img[^>]+src="([^">]+)"/gi;
+    while ((match = htmlImgRegex.exec(body)) !== null) { images.push(match[1]); }
+
+    // 3. Extract Document/PDF links [name](url) (Ensures it ignores images starting with '!')
+    const linkRegex = /(?<!\!)\[.*?\]\((https:\/\/github\.com\/[^\s)]+)\)/gi;
+    while ((match = linkRegex.exec(body)) !== null) { pdfs.push(match[1]); }
+
+    // 4. Fallback for raw GitHub assets URLs injected manually without markdown format
+    const bareUrlRegex = /https:\/\/github\.com\/(?:[^\s/]+\/[^\s/]+\/assets|user-attachments\/assets)\/[a-zA-Z0-9-]+/gi;
+    while ((match = bareUrlRegex.exec(body)) !== null) {
+      const url = match[0];
+      if (!images.includes(url) && !pdfs.includes(url)) { pdfs.push(url); } // Defaults to PDF fallback
+    }
+
+    return {
+      course: get('Course') || 'General',
+      date: get('Date') || '',
+      notes: get('Notes') || '',
+      images: [...new Set(images)], // Unique
+      pdfs: [...new Set(pdfs)]      // Unique
     };
-    return { course:get('Course')||'General', date:get('Date')||'', pdf:getPdf(), notes:get('Notes')||'' };
   }
 
   function fmtDate(s) {
@@ -444,7 +493,6 @@
       return;
     }
 
-    /* build course filter pills */
     const courses = [...new Set(issues.map(i => parseBody(i.body).course))];
     const filterBar = document.getElementById('filter-bar');
     filterBar.querySelectorAll('[data-filter]:not([data-filter="all"])').forEach(el=>el.remove());
@@ -457,8 +505,28 @@
     document.getElementById('note-count').textContent = issues.length;
 
     issues.forEach((issue, i) => {
-      const { course, date, pdf, notes } = parseBody(issue.body);
+      const { course, date, notes, images, pdfs } = parseBody(issue.body);
       const color = getColor(course);
+      
+      let footerHTML = '';
+      
+      if (pdfs.length > 0) {
+        footerHTML += `<a href="${esc(pdfs[0])}" target="_blank" rel="noopener" class="btn-pdf" style="background:${color}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+          Open PDF</a>`;
+      }
+      
+      if (images.length > 0) {
+        const imgData = encodeURIComponent(JSON.stringify(images));
+        footerHTML += `<button class="btn-img" data-images="${imgData}" style="background:${color}E6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View ${images.length} Image${images.length>1?'s':''}</button>`;
+      }
+
+      if (pdfs.length === 0 && images.length === 0) {
+        footerHTML += `<span class="empty-meta">Text Note Only</span>`;
+      }
+
       const card  = document.createElement('div');
       card.className='note-card'; card.dataset.course=course;
       card.style.animationDelay=`${i*0.06}s`;
@@ -473,11 +541,7 @@
             ${esc(fmtDate(date))}</span>`:''}
         </div>
         ${notes?`<p class="card-body">${esc(notes)}</p>`:''}
-        <div class="card-footer">
-          ${pdf?`<a href="${esc(pdf)}" target="_blank" rel="noopener" class="btn-pdf" style="background:${color}">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
-            Open PDF</a>`:'<span style="font-size:11px;font-family:var(--font-mono);color:var(--text-muted);opacity:.6;">No PDF attached</span>'}
-        </div>`;
+        <div class="card-footer">${footerHTML}</div>`;
       grid.appendChild(card);
     });
 
@@ -491,13 +555,58 @@
         p.classList.add('active');
         const f = p.dataset.filter;
         const cards = document.querySelectorAll('.note-card');
-        cards.forEach(c => { c.style.display=(f==='all'||c.dataset.course===f)?'':'none'; });
+        cards.forEach(c => { c.style.display=(f==='all'||c.dataset.course===f)?'flex':'none'; });
         document.getElementById('note-count').textContent = [...cards].filter(c=>c.style.display!=='none').length;
       });
     });
   }
 
-  /* ── Fetch from GitHub ── */
+  /* ── Interactive Image Modal ── */
+  let currentGallery = [];
+  let currentImgIndex = 0;
+  
+  const gModal = document.getElementById('gallery-modal');
+  const gImg = document.getElementById('gallery-img');
+  const gCount = document.getElementById('gallery-count');
+  
+  function openGallery(encodedImages) {
+    currentGallery = JSON.parse(decodeURIComponent(encodedImages));
+    currentImgIndex = 0;
+    updateGalleryUI();
+    gModal.classList.add('active');
+  }
+  
+  function updateGalleryUI() {
+    gImg.src = currentGallery[currentImgIndex];
+    gCount.textContent = `${currentImgIndex + 1} / ${currentGallery.length}`;
+    document.getElementById('gallery-prev').style.display = currentGallery.length > 1 ? 'flex' : 'none';
+    document.getElementById('gallery-next').style.display = currentGallery.length > 1 ? 'flex' : 'none';
+  }
+  
+  document.getElementById('gallery-close').addEventListener('click', () => gModal.classList.remove('active'));
+  document.getElementById('gallery-next').addEventListener('click', () => {
+    currentImgIndex = (currentImgIndex + 1) % currentGallery.length; updateGalleryUI();
+  });
+  document.getElementById('gallery-prev').addEventListener('click', () => {
+    currentImgIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length; updateGalleryUI();
+  });
+
+  // Modal Keyboard Navigation
+  window.addEventListener('keydown', (e) => {
+    if (!gModal.classList.contains('active')) return;
+    if (e.key === 'Escape') gModal.classList.remove('active');
+    if (e.key === 'ArrowRight') document.getElementById('gallery-next').click();
+    if (e.key === 'ArrowLeft') document.getElementById('gallery-prev').click();
+  });
+
+  // Delegate Image Button Clicks
+  document.getElementById('notes-grid').addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-img');
+    if (btn) openGallery(btn.dataset.images);
+  });
+
+
+  /* ── Fetch ── */
   async function load() {
     try {
       const url = `https://api.github.com/repos/${OWNER}/${REPO}/issues?labels=${encodeURIComponent(LABEL)}&state=open&per_page=100`;
@@ -512,7 +621,7 @@
     }
   }
 
-  /* ── Floating molecules ── */
+  /* ── Floating Molecules ── */
   (function() {
     const svgs=[
       `<svg viewBox="0 0 60 40" fill="none" stroke="#5e7ce2" stroke-width="2"><circle cx="12" cy="20" r="8"/><circle cx="48" cy="20" r="8"/><line x1="20" y1="20" x2="40" y2="20"/></svg>`,
