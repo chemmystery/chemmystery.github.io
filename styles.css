@@ -143,13 +143,13 @@ a {
 /* Typography & Headings */
 .gradient-heading {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
     text-align: center;
-    background: var(--gradient-text);
+    background: linear-gradient(45deg, #1e1b4b, #4f46e5, #be185d);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientShift 3s ease infinite;
+    animation: gradientShift 5s ease infinite;
     margin-bottom: 5px;
     line-height: 1.2;
 }
@@ -172,17 +172,24 @@ a {
 
 .brand-heading {
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     margin: 20px 0;
-    color: var(--primary-color);
+    background: linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .section-header h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 25px;
     text-align: center;
-    color: var(--primary-color);
+    font-weight: 700;
+    background: linear-gradient(45deg, #4f46e5, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    width: 100%;
 }
 
 /* Slider */
@@ -268,9 +275,9 @@ a {
 }
 
 .founder-name {
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: var(--gradient-text);
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #1d4ed8, #7e22ce);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
@@ -294,28 +301,38 @@ a {
     align-items: flex-start;
     gap: 15px;
     box-shadow: var(--glass-shadow);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(236, 72, 153, 0.15);
+    border-color: rgba(236, 72, 153, 0.3);
 }
 
 .feature-icon {
-    font-size: 2rem;
-    color: #000;
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #4f46e5, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .feature-content h4 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 5px;
-    color: var(--primary-color);
+    color: #1e1b4b;
 }
 
 .feature-content p {
     font-size: 0.95rem;
-    color: var(--text-light);
-    line-height: 1.4;
+    color: #4a5568;
+    line-height: 1.5;
 }
 
 /* Teachers Section */
@@ -331,6 +348,14 @@ a {
     gap: 20px;
     align-items: center;
     text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.teacher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.3);
 }
 
 @media (min-width: 768px) {
@@ -351,19 +376,29 @@ a {
 }
 
 .teacher-info h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 15px;
-    color: var(--primary-color);
+    background: linear-gradient(45deg, #4f46e5, #7c3aed, #ec4899);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
 }
 
 .teacher-qualifications p {
     margin-bottom: 8px;
-    line-height: 1.5;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.teacher-qualifications p strong {
+    color: #1e293b;
+    font-weight: 700;
 }
 
 .teacher-qualifications .sub-text {
     font-style: italic;
-    color: var(--text-light);
+    color: #8b5cf6;
     margin-bottom: 12px;
 }
 
