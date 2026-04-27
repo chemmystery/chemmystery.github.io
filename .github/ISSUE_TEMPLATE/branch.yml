@@ -1,0 +1,26 @@
+name: Branch
+description: Add a new branch location
+title: "[BRANCH] <Branch Name>"
+labels: ["branch"]
+body:
+  - type: input
+    id: branch_name
+    attributes:
+      label: Branch Name
+      description: The name of the branch/center.
+    validations:
+      required: true
+  - type: textarea
+    id: branch_address
+    attributes:
+      label: Branch Address
+      description: The full address of the branch.
+    validations:
+      required: true
+  - type: textarea
+    id: branch_image
+    attributes:
+      label: Branch Image
+      description: Upload an image of the branch (drag & drop or paste). Ensure it works for all image types.
+    validations:
+      required: true

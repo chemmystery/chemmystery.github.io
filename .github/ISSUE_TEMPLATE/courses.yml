@@ -1,0 +1,23 @@
+name: Add a Course
+description: Upload a new course image and title for the website
+title: "[COURSE] "
+labels: ["course"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the form below to add a course. The image will be displayed in 16:9 format.
+  - type: textarea
+    id: image_upload
+    attributes:
+      label: Cover Image
+      description: Drag and drop an image file here to upload it to GitHub. Ensure it is roughly 16:9 aspect ratio.
+    validations:
+      required: true
+  - type: input
+    id: course_title
+    attributes:
+      label: Course Title
+      description: Enter the name of the course. This will be shown below the image.
+    validations:
+      required: true

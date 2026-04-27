@@ -1,0 +1,16 @@
+name: Add to Gallery
+description: Upload images to the gallery
+title: "[GALLERY] New Images"
+labels: ["gallery"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please use the box below to upload one or more images to the gallery.
+  - type: textarea
+    id: gallery_images
+    attributes:
+      label: Gallery Images
+      description: Drag and drop image files here to upload them to the gallery.
+    validations:
+      required: true

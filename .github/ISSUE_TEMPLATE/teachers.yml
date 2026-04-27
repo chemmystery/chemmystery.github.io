@@ -1,0 +1,23 @@
+name: Add a Teacher
+description: Upload a new teacher's profile and qualifications
+title: "[TEACHER] "
+labels: ["teacher"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the form below to add a teacher.
+  - type: textarea
+    id: teacher_image
+    attributes:
+      label: Teacher Photo
+      description: Drag and drop an image file here to upload it to GitHub. Ensure it is roughly square aspect ratio.
+    validations:
+      required: true
+  - type: textarea
+    id: teacher_qualifications
+    attributes:
+      label: Qualifications and Experience
+      description: Enter the qualifications. You can use Markdown formatting like bold (**bold**) and italics (*italics*).
+    validations:
+      required: true
