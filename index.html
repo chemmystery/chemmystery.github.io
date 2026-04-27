@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlocking Chem-Mystery</title>
+    <meta name="description" content="All Subjects Under One Roof. Coaching center by Kinshouk Chatterjee.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/50x50/ffffff/000000?text=Logo'">
+        </div>
+        <div class="header-title">
+            <span class="title-unlocking">Unlocking</span>
+            <span class="title-chemmystery">Chem-Mystery</span>
+        </div>
+        <div class="header-actions">
+            <a href="tel:+918617630500" class="action-btn call-btn" aria-label="Call Us"><i class="fas fa-phone-alt"></i></a>
+            <a href="https://wa.me/918617630500" target="_blank" class="action-btn whatsapp-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+        
+        <!-- Home Section -->
+        <section id="home" class="tab-section active">
+            <h1 class="gradient-heading">All Subjects Under One Roof</h1>
+            <h2 class="sub-heading">our courses</h2>
+            
+            <div class="slider-container" id="homeSlider">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Slider images will be injected here via JS -->
+                    <div class="slider-placeholder">Loading courses...</div>
+                </div>
+            </div>
+
+            <h3 class="brand-heading">Unlocking Chem-Mystery</h3>
+
+            <div class="founder-section">
+                <div class="founder-box">
+                    <img src="founder.png" alt="Kinshouk Chatterjee" class="founder-img" onerror="this.src='https://via.placeholder.com/300x300/e0e0e0/000000?text=Founder'">
+                    <div class="founder-title">FOUNDER</div>
+                </div>
+                <div class="founder-name">Kinshouk Chatterjee</div>
+            </div>
+
+            <div class="features-section">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="feature-content">
+                        <h4>Demo Classes</h4>
+                        <p>Take 2 free demo classes.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="feature-content">
+                        <h4>Study Materials</h4>
+                        <p>Printed, PDF notes, & Past solutions.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="feature-content">
+                        <h4>Testing & Analysis</h4>
+                        <p>All India Test Series (10 Comprehensive Papers).</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <div class="feature-content">
+                        <h4>Doubt Support</h4>
+                        <p>Recorded live sessions & special classes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="tab-section">
+            <div class="section-header">
+                <h2>Our Courses</h2>
+            </div>
+            <div class="courses-container" id="coursesList">
+                <div class="loader">Loading courses...</div>
+            </div>
+        </section>
+
+        <!-- Teachers Section -->
+        <section id="teachers" class="tab-section">
+            <div class="section-header">
+                <h2>Our Teachers</h2>
+            </div>
+            <div class="teachers-container">
+                <!-- Founder Teacher -->
+                <div class="teacher-card glass-box founder-teacher">
+                    <img src="founder.png" alt="Kinshouk Chatterjee" class="teacher-img" onerror="this.src='https://via.placeholder.com/300x300/e0e0e0/000000?text=Founder'">
+                    <div class="teacher-info">
+                        <h3>Kinshouk Chatterjee</h3>
+                        <div class="teacher-qualifications">
+                            <p><strong>B.Sc. (BURDWAN UNIVERSITY) - FIRST CLASS</strong></p>
+                            <p class="sub-text">"B.Sc. Chemistry (Hons.) Inorganic, Physical, Organic"</p>
+                            
+                            <p><strong>M.Sc. (RAJABAZAR SCIENCE COLLEGE, UNIVERSITY OF CALCUTTA) - FIRST CLASS</strong></p>
+                            
+                            <p><strong>B.Ed.</strong></p>
+                            <p class="sub-text">"IIT JAM (Inorganic, Physical, Organic)"</p>
+                            
+                            <p><strong>CSIR-NET QUALIFIED TWICE (AIR-21)</strong></p>
+                            <p class="sub-text">"CSIR - NET, GATE, TIFR AND SET" (Paper 1&2)</p>
+                            
+                            <p><strong>GATE QUALIFIED THRICE (AIR-52)</strong></p>
+                            <p><strong>PDF CLASS NOTES</strong></p>
+                            
+                            <p><strong>TEACHING EXPERIENCE:</strong> 6 YEARS (CSIR-NET, IIT JAM, ONLINE) & 4 YEARS (BOARDS, NEET, JEE OFFLINE)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dynamic Teachers from GitHub -->
+                <div id="otherTeachersList"></div>
+            </div>
+        </section>
+
+        <!-- Branch Section -->
+        <section id="branch" class="tab-section">
+            <div class="section-header">
+                <h2>Our Branches</h2>
+            </div>
+            <div class="branch-container" id="branchList">
+                <div class="loader">Loading branches...</div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="tab-section">
+            <div class="section-header">
+                <h2>Gallery</h2>
+            </div>
+            <div class="gallery-grid" id="galleryList">
+                <div class="loader">Loading gallery...</div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="tab-section">
+            <div class="section-header">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-container glass-box" id="aboutContent">
+                <div class="loader">Loading about us...</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="tab-section">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container glass-box">
+                <div class="social-links">
+                    <a href="https://wa.me/918617630500" target="_blank" class="social-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Us</span>
+                    </a>
+                    <a href="https://www.facebook.com/groups/4099280743478920/" target="_blank" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook Group</span>
+                    </a>
+                    <a href="https://youtube.com/@kinshoukchatterjee?si=vFC46RB5jg1hmO25" target="_blank" class="social-btn youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube Channel</span>
+                    </a>
+                    <a href="https://www.instagram.com/unlockingchem_mystery/" target="_blank" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pw-footer">
+            <div class="pw-footer-content">
+                <div class="pw-footer-brand">
+                    <div class="pw-logo-container">
+                        <img src="logo.png" alt="Logo" class="pw-logo" onerror="this.src='https://via.placeholder.com/50x50/ffffff/000000?text=Logo'">
+                        <span class="pw-brand-name">Unlocking Chem-Mystery</span>
+                    </div>
+                    <div class="pw-brand-desc">
+                        Unlocking Chem-Mystery is a premium education platform that provides accessible & comprehensive learning experiences to students. We believe in empowering every single student with high-quality education, intensive courses, and study materials by qualified & experienced faculties.
+                    </div>
+                    <div class="pw-social-section">
+                        <p>Let's get social :</p>
+                        <div class="pw-social-icons">
+                            <a href="https://www.facebook.com/groups/4099280743478920/" target="_blank" class="pw-social-btn fb"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/unlockingchem_mystery/" target="_blank" class="pw-social-btn ig"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@kinshoukchatterjee?si=vFC46RB5jg1hmO25" target="_blank" class="pw-social-btn yt"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/918617630500" target="_blank" class="pw-social-btn wa"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pw-footer-bottom">
+                <div class="pw-copyright">Copyright © 2026 Unlocking Chem-Mystery. All rights reserved.</div>
+                <a href="https://polarithweb.github.io" target="_blank" class="pw-credit">Designed by Polarith Web</a>
+            </div>
+        </footer>
+        
+    </main>
+
+    <!-- Bottom Liquid Glass Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-scroller">
+            <ul class="nav-tabs">
+                <li class="nav-item" data-target="home"><i class="fas fa-home"></i> Home</li>
+                <li class="nav-item" data-target="courses"><i class="fas fa-graduation-cap"></i> Courses</li>
+                <li class="nav-item" data-target="teachers"><i class="fas fa-chalkboard-teacher"></i> Teachers</li>
+                <li class="nav-item" data-target="branch"><i class="fas fa-map-marker-alt"></i> Branch</li>
+                <li class="nav-item" data-target="gallery"><i class="fas fa-images"></i> Gallery</li>
+                <li class="nav-item" data-target="about"><i class="fas fa-info-circle"></i> About Us</li>
+                <li class="nav-item"><a href="https://chemmystery.github.io/notes.html" class="nav-link-external"><i class="fas fa-book"></i> Notes</a></li>
+                <li class="nav-item" data-target="contact"><i class="fas fa-envelope"></i> Contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
