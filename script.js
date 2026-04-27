@@ -65,18 +65,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error('Failed to fetch data');
             const issues = await response.json();
 
+            if (!Array.isArray(issues)) {
+                throw new Error('Invalid data format received from GitHub API');
+            }
+
             // Process issues by labels
-            processCourses(issues.filter(issue => issue.labels.some(l => l.name === 'course' || l.name === 'Course')));
-            processTeachers(issues.filter(issue => issue.labels.some(l => l.name === 'teacher' || l.name === 'Teacher')));
-            processBranch(issues.filter(issue => issue.labels.some(l => l.name === 'branch' || l.name === 'Branch')));
-            processGallery(issues.filter(issue => issue.labels.some(l => l.name === 'gallery' || l.name === 'Gallery')));
-            processAbout(issues.find(issue => issue.labels.some(l => l.name === 'about' || l.name === 'About')));
+            processCourses(issues.filter(issue => issue.labels.some(l => l.name.toLowerCase() === 'course')));
+            processTeachers(issues.filter(issue => issue.labels.some(l => l.name.toLowerCase() === 'teacher')));
+            processBranch(issues.filter(issue => issue.labels.some(l => l.name.toLowerCase() === 'branch')));
+            processGallery(issues.filter(issue => issue.labels.some(l => l.name.toLowerCase() === 'gallery')));
+            processAbout(issues.find(issue => issue.labels.some(l => l.name.toLowerCase() === 'about')));
             
         } catch (error) {
             console.error('Error fetching GitHub data:', error);
             document.querySelectorAll('.loader').forEach(loader => {
                 loader.textContent = 'Failed to load content. Please try again later.';
             });
+            const sliderPlaceholder = document.querySelector('.slider-placeholder');
+            if (sliderPlaceholder) {
+                sliderPlaceholder.textContent = 'Failed to load banners.';
+            }
         }
     }
 
