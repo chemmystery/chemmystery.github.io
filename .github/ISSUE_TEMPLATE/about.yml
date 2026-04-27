@@ -1,0 +1,23 @@
+name: Update About Us
+description: Update the About Us section image and text
+title: "[ABOUT] About Us Content"
+labels: ["about"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please use this form to set or update the About Us section. Note: The website will only use the latest issue with the "about" label.
+  - type: textarea
+    id: about_image
+    attributes:
+      label: About Us Image
+      description: Drag and drop an image file here to upload it.
+    validations:
+      required: true
+  - type: textarea
+    id: about_text
+    attributes:
+      label: About Us Content
+      description: Enter the text for the about us section. You can use markdown for formatting.
+    validations:
+      required: true
