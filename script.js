@@ -97,12 +97,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function extractTextFromMarkdown(markdown) {
-        const parsedHtml = marked.parse(markdown || '');
+        // Remove Contact section from the markdown before parsing to HTML so it doesn't appear in qualifications
+        let processedMarkdown = markdown ? markdown.replace(/### Contact\s+[^\n]+/g, '') : '';
+        
+        const parsedHtml = marked.parse(processedMarkdown);
         const parser = new DOMParser();
         const doc = parser.parseFromString(parsedHtml, 'text/html');
         // Remove images to get pure text content
         const images = doc.querySelectorAll('img');
         images.forEach(img => img.remove());
+        
+        // Remove specific headers
+        const headersToRemove = [
+            'Branch Name', 'Branch Address', 'Branch Image', 
+            'About Us Image', 'About Us Content',
+            'Teacher Photo', 'Qualifications and Experience'
+        ];
+        
+        const headers = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headers.forEach(h => {
+            if (headersToRemove.includes(h.textContent.trim())) {
+                h.remove();
+            }
+        });
+        
         return doc.body.innerHTML;
     }
 
@@ -161,6 +179,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const images = extractImagesFromMarkdown(issue.body);
             const imageSrc = images.length > 0 ? images[0] : 'https://via.placeholder.com/150x150/e0e0e0/000000?text=Teacher';
             
+            // Extract contact
+            let contactBtnHtml = '';
+            const contactMatch = issue.body ? issue.body.match(/### Contact\s+([^\n]+)/) : null;
+            if (contactMatch && contactMatch[1].trim() !== '_No response_') {
+                let link = contactMatch[1].trim();
+                if (!link.startsWith('http') && !link.startsWith('tel:') && !link.startsWith('mailto:')) {
+                    if (/^\d+$/.test(link.replace(/[\s\-\+]/g, ''))) {
+                        link = 'tel:' + link;
+                    } else if (link.includes('@')) {
+                        link = 'mailto:' + link;
+                    } else if (!link.startsWith('http')) {
+                        link = 'https://' + link;
+                    }
+                }
+                contactBtnHtml = `<div class="teacher-contact-wrapper"><a href="${link}" target="_blank" class="contact-btn">Contact</a></div>`;
+            }
+            
             // Extract text but remove the image part for cleaner output
             let pureHtml = extractTextFromMarkdown(issue.body);
             
@@ -173,6 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="teacher-qualifications">
                         ${pureHtml}
                     </div>
+                    ${contactBtnHtml}
                 </div>
             `;
             teachersList.appendChild(card);
