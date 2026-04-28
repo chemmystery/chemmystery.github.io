@@ -386,6 +386,28 @@ a {
     margin-bottom: 12px;
 }
 
+.teacher-contact-wrapper {
+    margin-top: 15px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 8px 24px;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(58, 123, 213, 0.3);
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58, 123, 213, 0.4);
+}
+
 /* Courses Section */
 .courses-container {
     display: flex;
