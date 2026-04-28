@@ -21,3 +21,10 @@ body:
       description: Enter the qualifications. You can use Markdown formatting like bold (**bold**) and italics (*italics*).
     validations:
       required: true
+  - type: input
+    id: teacher_contact
+    attributes:
+      label: Contact
+      description: Enter the teacher's contact link (e.g., WhatsApp URL) or phone number.
+    validations:
+      required: false
