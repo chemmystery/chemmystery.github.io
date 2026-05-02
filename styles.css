@@ -91,7 +91,7 @@ a {
     font-size: 1rem;
     font-weight: 700;
     background: linear-gradient(45deg, #4f46e5, #7c3aed, #3b82f6, #4f46e5);
-    background-size: 190% auto;
+    background-size: 100% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientShift 4s ease infinite;
