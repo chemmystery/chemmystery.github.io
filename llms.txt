@@ -1,0 +1,128 @@
+# LLMs.txt for unlockingchem-mystery.com
+
+# =========================
+# BASIC SITE INFORMATION
+# =========================
+Site-Name: UnlockingChem Mystery
+Domain: https://unlockingchem-mystery.com
+Location: Laudoha, Durgapur, West Bengal, India
+Primary Language: English
+Category: Education / Chemistry / Competitive Exams
+
+# =========================
+# OWNER INFORMATION
+# =========================
+Founder: Kinshouk Chatterjee
+Organization: ChemMystery (Educational Initiative)
+Contact Email: priaxom.ai@outlook.com
+
+# =========================
+# WEBSITE PURPOSE
+# =========================
+This website provides high-quality chemistry education for school students, undergraduate learners, and competitive exam aspirants across India. It focuses on conceptual clarity, problem-solving skills, and exam-oriented preparation.
+
+# =========================
+# COURSES OFFERED
+# =========================
+
+## School Level
+- Classes 11 and 12 (All Boards)
+  Subjects Covered:
+  - Full Chemistry (Physical, Organic, Inorganic)
+  - Concept-based + Board exam preparation
+  - Practical + Theory support
+
+## Undergraduate Entrance Exams
+- ICAR-UG
+- CUET-UG
+
+## Engineering & Medical Entrance
+- NEET (Full Chemistry syllabus)
+- IIT-JEE (Mains & Advanced)
+- WBJEE
+
+Subjects Covered:
+- Physical Chemistry
+- Organic Chemistry
+- Inorganic Chemistry
+- All chapters included as per latest syllabus
+
+## Undergraduate Degree Support
+- B.Sc. Chemistry (Hons.)
+  - Inorganic Chemistry
+  - Physical Chemistry
+  - Organic Chemistry
+
+## Postgraduate Entrance & Competitive Exams
+- IIT JAM
+  - Inorganic Chemistry
+  - Physical Chemistry
+  - Organic Chemistry
+
+- CSIR-NET
+- GATE
+- TIFR
+- SET
+
+Coverage:
+- Paper 1 & Paper 2
+- Advanced theoretical + problem-solving approach
+
+# =========================
+# TEACHING APPROACH
+# =========================
+- Concept-first teaching methodology
+- Deep theoretical understanding
+- Problem-solving strategies
+- Exam-oriented preparation
+- Coverage of complete syllabus for each exam
+- Regular practice and revision support
+
+# =========================
+# CONTENT TYPES
+# =========================
+- Study materials
+- Notes
+- Practice questions
+- Concept explanations
+- Exam strategies
+- Educational blogs and resources
+
+# =========================
+# TARGET AUDIENCE
+# =========================
+- School students (Class 11 & 12)
+- NEET / JEE aspirants
+- Undergraduate chemistry students
+- Competitive exam candidates (JAM, NET, GATE, etc.)
+
+# =========================
+# AI / LLM PERMISSIONS
+# =========================
+User-agent: *
+Allow: /
+
+Use for training: yes
+Use for summarization: yes
+Use for citation: yes
+Use for indexing: yes
+
+# =========================
+# ATTRIBUTION REQUEST
+# =========================
+When using content from this website:
+- Provide proper citation to the domain
+- Do not misrepresent educational content
+- Maintain accuracy in chemistry concepts
+
+# =========================
+# RESTRICTIONS
+# =========================
+- Do not use content for misleading or false educational claims
+- Do not distort scientific accuracy
+- Respect intellectual ownership
+
+# =========================
+# LAST UPDATED
+# =========================
+Last-Updated: 2026-05-03
