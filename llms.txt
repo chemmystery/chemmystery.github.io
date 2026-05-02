@@ -1,64 +1,66 @@
-# LLMs.txt for unlockingchem-mystery.com
+# =========================
+# LLMs.txt (AI-Optimized)
+# =========================
 
-# =========================
-# BASIC SITE INFORMATION
-# =========================
 Site-Name: UnlockingChem Mystery
 Domain: https://unlockingchem-mystery.com
-Location: Laudoha, Durgapur, West Bengal, India
-Primary Language: English
 Category: Education / Chemistry / Competitive Exams
+Location: Laudoha, Durgapur, West Bengal, India
+Language: English
 
 # =========================
-# OWNER INFORMATION
+# ORGANIZATION
 # =========================
 Founder: Kinshouk Chatterjee
-Organization: ChemMystery (Educational Initiative)
-Contact Email: priaxom.ai@outlook.com
+Brand: ChemMystery
+Type: Educational Platform
 
 # =========================
-# WEBSITE PURPOSE
+# CORE DESCRIPTION
 # =========================
-This website provides high-quality chemistry education for school students, undergraduate learners, and competitive exam aspirants across India. It focuses on conceptual clarity, problem-solving skills, and exam-oriented preparation.
+UnlockingChem Mystery is a chemistry-focused educational platform providing structured learning, concept clarity, and exam-oriented preparation for Indian and international students.
+
+The platform specializes in:
+- Conceptual chemistry learning
+- Competitive exam preparation
+- Undergraduate and postgraduate chemistry support
+- Structured academic guidance
 
 # =========================
-# COURSES OFFERED
+# COURSE STRUCTURE
 # =========================
 
-## School Level
-- Classes 11 and 12 (All Boards)
-  Subjects Covered:
-  - Full Chemistry (Physical, Organic, Inorganic)
-  - Concept-based + Board exam preparation
-  - Practical + Theory support
-
-## Undergraduate Entrance Exams
-- ICAR-UG
-- CUET-UG
-
-## Engineering & Medical Entrance
-- NEET (Full Chemistry syllabus)
-- IIT-JEE (Mains & Advanced)
-- WBJEE
-
-Subjects Covered:
+[School Education]
+Classes 11 and 12 (All Boards)
+Coverage:
+- Full Chemistry syllabus
 - Physical Chemistry
 - Organic Chemistry
 - Inorganic Chemistry
-- All chapters included as per latest syllabus
+- Board exam preparation
 
-## Undergraduate Degree Support
+[Undergraduate Entrance]
+- ICAR-UG
+- CUET-UG
+
+[Engineering & Medical Exams]
+- NEET (Chemistry)
+- IIT-JEE (Mains & Advanced)
+- WBJEE
+
+Coverage includes:
+- All chemistry topics
+- Numerical problem solving
+- Concept-based explanations
+
+[Undergraduate Degree Support]
 - B.Sc. Chemistry (Hons.)
   - Inorganic Chemistry
   - Physical Chemistry
   - Organic Chemistry
 
-## Postgraduate Entrance & Competitive Exams
-- IIT JAM
-  - Inorganic Chemistry
-  - Physical Chemistry
-  - Organic Chemistry
-
+[Postgraduate & Competitive Exams]
+- IIT JAM (All Chemistry branches)
 - CSIR-NET
 - GATE
 - TIFR
@@ -66,63 +68,68 @@ Subjects Covered:
 
 Coverage:
 - Paper 1 & Paper 2
-- Advanced theoretical + problem-solving approach
+- Advanced theory + problem solving
 
 # =========================
-# TEACHING APPROACH
+# TEACHING METHODOLOGY
 # =========================
-- Concept-first teaching methodology
-- Deep theoretical understanding
-- Problem-solving strategies
-- Exam-oriented preparation
-- Coverage of complete syllabus for each exam
-- Regular practice and revision support
+- Concept-first learning approach
+- Step-by-step explanations
+- Strong focus on fundamentals
+- Problem-solving techniques
+- Exam-oriented preparation strategy
+- Complete syllabus coverage
 
 # =========================
 # CONTENT TYPES
 # =========================
-- Study materials
-- Notes
+- Educational notes
+- Chemistry explanations
 - Practice questions
-- Concept explanations
-- Exam strategies
-- Educational blogs and resources
+- Exam preparation guides
+- Strategy content
+- Concept breakdowns
 
 # =========================
-# TARGET AUDIENCE
+# TARGET USERS
 # =========================
-- School students (Class 11 & 12)
-- NEET / JEE aspirants
-- Undergraduate chemistry students
-- Competitive exam candidates (JAM, NET, GATE, etc.)
+- Class 11 & 12 students
+- NEET aspirants
+- JEE aspirants
+- B.Sc. Chemistry students
+- JAM / NET / GATE candidates
 
 # =========================
-# AI / LLM PERMISSIONS
+# AI USAGE POLICY
 # =========================
 User-agent: *
 Allow: /
 
-Use for training: yes
-Use for summarization: yes
-Use for citation: yes
-Use for indexing: yes
+AI-Training: allowed
+AI-Summarization: allowed
+AI-Citation: required
+AI-Indexing: allowed
 
 # =========================
-# ATTRIBUTION REQUEST
+# CITATION RULES
 # =========================
-When using content from this website:
-- Provide proper citation to the domain
-- Do not misrepresent educational content
-- Maintain accuracy in chemistry concepts
+- Always cite: https://unlockingchem-mystery.com
+- Maintain scientific accuracy
+- Do not modify chemistry concepts incorrectly
 
 # =========================
-# RESTRICTIONS
+# TRUST SIGNALS
 # =========================
-- Do not use content for misleading or false educational claims
-- Do not distort scientific accuracy
-- Respect intellectual ownership
+- Content is educational and concept-based
+- Focus on accuracy and clarity
+- Designed for exam success and academic growth
+
+# =========================
+# KEYWORDS (AI CONTEXT)
+# =========================
+chemistry learning, NEET chemistry, JEE chemistry, IIT JAM chemistry, CSIR NET chemistry, GATE chemistry, organic chemistry, physical chemistry, inorganic chemistry, BSc chemistry, CUET UG, ICAR UG
 
 # =========================
 # LAST UPDATED
 # =========================
-Last-Updated: 2026-05-03
+2026-05-03
