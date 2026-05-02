@@ -739,6 +739,18 @@ a {
     color: #4a4a4a;
 }
 
+.pw-credits-small {
+    font-size: 0.6rem;
+    color: #888;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+@media (min-width: 768px) {
+    .pw-credits-small {
+        text-align: right;
+    }
+}
+
 /* Bottom Liquid Glass Navigation */
 .bottom-nav {
     position: fixed;
